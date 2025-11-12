@@ -1,0 +1,8 @@
+setup.py
+diamond/__init__.py
+diamond/arrows.py
+diamond/core.py
+diamond.egg-info/PKG-INFO
+diamond.egg-info/SOURCES.txt
+diamond.egg-info/dependency_links.txt
+diamond.egg-info/top_level.txt

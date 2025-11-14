@@ -104,6 +104,28 @@ def help():
     write("\nTip: separate multiple commands on one line with semicolons.")
 
 # -----------------------------
+# Math
+# -----------------------------
+
+def calculate(num1, operator, num2):
+    if operator == "+":
+      return num1 + num2
+    elif operator == "-":
+      return num1 - num2
+    elif operator == "*":
+      return num1 * num2
+    elif operator == "/":
+      return num1 / num2
+    elif operator == "%":
+      return num1 % num2
+    elif operator == "//":
+      return num1 // num2
+    elif operator == "**":
+      return num1 ** num2
+    else:
+      print("Error: Couldn't compute")
+
+# -----------------------------
 # Command Dictionary
 # -----------------------------
 
@@ -121,7 +143,7 @@ commands = {
     'pi': math.pi,
     'e': math.e,
     'help': help,
-    'calculate': calculate
+    'calculate': calculate,
 }
 
 # -----------------------------
@@ -162,26 +184,4 @@ def run():
                 exec(stmt, sandbox)
             except Exception as e:
                 write(e)
-
-# -----------------------------
-# Math
-# -----------------------------
-
-def calculate(num1, operator, num2):
-    if operator == "+":
-      return num1 + num2
-    elif operator == "-":
-      return num1 - num2
-    elif operator == "*":
-      return num1 * num2
-    elif operator == "/":
-      return num1 / num2
-    elif operator == "%":
-      return num1 % num2
-    elif operator == "//":
-      return num1 // num2
-    elif operator == "**":
-      return num1 ** num2
-    else:
-      print("Error: Couldn't compute")
 

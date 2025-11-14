@@ -1,9 +1,10 @@
 # core.py
-import os
-import time
-import random
-import math
-import turtle
+import os # For the clear
+import time # For wait()
+import random # RNG, going to add more things soon
+import math # Advanced math
+import turtle # Arrow
+import readline # QOL improvement
 
 # -----------------------------
 # Core Functions

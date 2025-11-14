@@ -97,7 +97,7 @@ def help():
         write(f"  {cmd}")
 
     write("\nMath commands:")
-    math_cmds = ["sqrt(x)", "sin(x)", "cos(x)", "tan(x)", "pi", "e"]
+    math_cmds = ["sqrt(x)", "sin(x)", "cos(x)", "tan(x)", "pi", "e", "calculate(num1, \"operator\", num2)"]
     for cmd in math_cmds:
         write(f"  {cmd}")
     

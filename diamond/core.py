@@ -5,6 +5,7 @@ import random # RNG, going to add more things soon
 import math # Advanced math
 import turtle # Arrow
 import readline # QOL improvement
+import importlib # Custom libraries
 
 # -----------------------------
 # Core Functions
@@ -26,9 +27,6 @@ def clear():
 
 def wait(seconds):
     time.sleep(seconds)
-
-def randint(lower, higher):
-    return random.randint(lower, higher)
 
 # -----------------------------
 # Arrow Class
@@ -87,8 +85,8 @@ def help():
     write("Welcome to Diamond! Here are the available commands:\n")
     
     write("Core commands:")
-    core_cmds = ["write(text='')", "ask(question)", "clear()", "wait(seconds)", "randint(a, b)", 
-                 "activate(name)", "run()", "help()"]
+    core_cmds = ["write(text='')", "ask(question)", "clear()", "wait(seconds)", 
+                 "activate(name)", "run()", "help()", "download(lib_name)"]
     for cmd in core_cmds:
         write(f"  {cmd}")
     
@@ -127,6 +125,18 @@ def calculate(num1, operator, num2):
       print("Error: Couldn't compute")
 
 # -----------------------------
+# Downloading custom libraries
+# -----------------------------
+
+def download(lib_name):
+    global sandbox
+    try:
+        mod = importlib.import_module(f"diamond.stdlib.{lib_name}")
+        sandbox[lib_name] = mod
+    except Exception as e:
+        print(e)
+
+# -----------------------------
 # Command Dictionary
 # -----------------------------
 
@@ -135,7 +145,6 @@ commands = {
     'ask': ask,
     'clear': clear,
     'wait': wait,
-    'randint': randint,
     'activate': activate,
     'sqrt': math.sqrt,
     'sin': math.sin,
@@ -145,6 +154,7 @@ commands = {
     'e': math.e,
     'help': help,
     'calculate': calculate,
+    'download': download
 }
 
 # -----------------------------

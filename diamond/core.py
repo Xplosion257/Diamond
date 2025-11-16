@@ -179,9 +179,14 @@ rebuild_sandbox()  # initial build
 def run():
     write("Welcome to the Diamond REPL! (type exit to quit)")
     write("Tip: separate multiple commands on one line with semicolons.\n")
-
     while True:
         code = input(">>> ").strip()
+        line = code.lstrip()
+        words = line.split()
+        first = words[0]
+        if first == "import" or first == "from":
+            print("Imports are not allowed")
+            continue
         if code == "exit":
             break
         if not code:

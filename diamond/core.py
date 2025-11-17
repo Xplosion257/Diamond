@@ -134,17 +134,14 @@ def download(lib_name):
     try:
         # Dynamically import the module from diamond.stdlib
         mod = importlib.import_module(f"diamond.stdlib.{lib_name}")
-        
-        # Add to globals under the diamond namespace (not diamond.stdlib)
-        globals()[lib_name] = mod  # Make diamond.lib_name accessible
-        
-        # Also add it to sys.modules to keep track of the module
-        sys.modules[f"diamond.{lib_name}"] = mod
-        
-        # Optionally, you can add it to sandbox as well (if you want to allow execution of functions from the downloaded module in the REPL)
+
+        # Ensure the diamond module has the attribute `rng` (or any other lib_name) directly
+        globals()[f"diamond"] = sys.modules["diamond"]
+        sys.modules["diamond"].__dict__[lib_name] = mod
+
+        # Optionally, add to sandbox
         sandbox[lib_name] = mod
-        
-        # Success confirmation
+
         print(f"Library '{lib_name}' successfully downloaded and added to diamond.")
     except Exception as e:
         print(f"Error loading library: {e}")

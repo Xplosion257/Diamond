@@ -6,6 +6,7 @@ import math # Advanced math
 import turtle # Arrow
 import readline # QOL improvement
 import importlib # Custom libraries
+import sys # Proper globals
 
 # -----------------------------
 # Core Functions

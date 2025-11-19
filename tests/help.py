@@ -1,0 +1,2 @@
+import diamond
+diamond.help()

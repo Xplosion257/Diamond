@@ -84,24 +84,8 @@ def block_print(*args, **kwargs):
 
 def help():
     write("Welcome to Diamond! Here are the available commands:\n")
-    
-    write("Core commands:")
-    core_cmds = ["write(text='')", "ask(question)", "clear()", "wait(seconds)", 
-                 "activate(name)", "run()", "help()", "download(lib_name)"]
-    for cmd in core_cmds:
-        write(f"  {cmd}")
-    
-    write("\nArrow commands:")
-    arrow_cmds = ["arrow.line(distance, color)", "arrow.turn(angle)", "arrow.rect(width, height, color, outline)"]
-    for cmd in arrow_cmds:
-        write(f"  {cmd}")
-
-    write("\nMath commands:")
-    math_cmds = ["sqrt(x)", "sin(x)", "cos(x)", "tan(x)", "pi", "e", "calculate(num1, \"operator\", num2)"]
-    for cmd in math_cmds:
-        write(f"  {cmd}")
-    
-    write("\nTip: separate multiple commands on one line with semicolons.")
+    for cmd in commands:
+        print(cmd)
 
 # -----------------------------
 # Math

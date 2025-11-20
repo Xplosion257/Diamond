@@ -1,11 +1,17 @@
+"""
+the rng module with random features
+"""
 import random
 
+# random.randint() simplified
 def randint(bottom, top):
     return random.randint(bottom, top)
 
-def increment(bottom, top, increment):
+# randrange is now easier to read
+def increment(bottom, top, steps):
     return random.randrange(bottom, top, increment)
 
+# Brand new percent that checks if the statement is true based on a percent chance
 def chance(percent):
     try:
         num = random.randint(1, 100)
@@ -16,5 +22,6 @@ def chance(percent):
     except Exception as e:
         print(e)
 
+# Random float
 def random_float():
     return random.random()

@@ -1,3 +1,6 @@
+"""
+Main functions of Diamond
+"""
 # core.py
 import os # For the clear
 import time # For wait()

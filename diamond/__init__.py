@@ -1,3 +1,6 @@
+"""
+Makes Diamond a package
+"""
 # __init__.py
 from . import core
 

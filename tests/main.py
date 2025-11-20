@@ -8,9 +8,9 @@ try:
     diamond.clear()
     diamond.activate("a")
     # Arrow commands
-    a.line(100, "black")
-    a.rect(100, 100, "red", "black")
-    a.turn(360)
+    diamond.a.line(100, "black")
+    diamond.a.rect(100, 100, "red", "black")
+    diamond.a.turn(360)
     # Math commands
     diamond.write(diamond.sqrt(9))
     diamond.write(diamond.sin(9))

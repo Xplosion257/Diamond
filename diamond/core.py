@@ -71,6 +71,8 @@ def activate(name):
     commands[name] = new_arrow
     setattr(sys.modules["diamond"], name, new_arrow)
     rebuild_sandbox()
+    if "sync_namespace" in globals():
+        globals()["sync_namespace"]()
     return new_arrow
 
 # -----------------------------

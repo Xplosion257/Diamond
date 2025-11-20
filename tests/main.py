@@ -28,3 +28,5 @@ try:
     diamond.help()
     diamond.wait(2)
     diamond.run()
+except Exception as e:
+    diamond.write(e)

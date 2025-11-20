@@ -70,6 +70,7 @@ def activate(name):
     arrows[name] = new_arrow
     commands[name] = new_arrow
     rebuild_sandbox()
+    return new_arrow
 
 # -----------------------------
 # Anti-Print

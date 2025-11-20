@@ -33,7 +33,7 @@ def wait(seconds):
 # Arrow Class
 # -----------------------------
 
-class arrow:
+class Arrow:
     def __init__(self, name):
         self.name = name
         self._turtle = turtle.Turtle()
@@ -66,9 +66,10 @@ def activate(name):
     if name in commands:
         write(f"Error: {name} already exists.")
         return
-    new_arrow = arrow(name)
+    new_arrow = Arrow(name)
     arrows[name] = new_arrow
     commands[name] = new_arrow
+    setattr(sys.modules["diamond"], name, new_arrow)
     rebuild_sandbox()
     return new_arrow
 

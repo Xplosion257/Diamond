@@ -12,10 +12,10 @@ def date():
     return time.ctime()
 
 # Delta time
-def delta(last_frame: float) -> tuple[float, float]:
+def delta(last_frame: float) -> float:
     current_frame = time.time()
     delta_time = round(current_frame - last_frame, 4)
-    return delta_time, current_frame
+    return delta_time
 
 # FPS
 def fps(delta_time: float) -> float:

@@ -6,7 +6,6 @@ import os # For the clear
 import time # For wait()
 import random # RNG, going to add more things soon
 import math # Advanced math
-import turtle # Arrow
 import readline # QOL improvement
 import importlib # Custom libraries
 import sys # Proper globals
@@ -31,52 +30,6 @@ def clear():
 
 def wait(seconds):
     time.sleep(seconds)
-
-# -----------------------------
-# Arrow Class
-# -----------------------------
-
-class Arrow:
-    def __init__(self, name):
-        self.name = name
-        self._turtle = turtle.Turtle()
-
-    def line(self, distance, color="black"):
-        self._turtle.pencolor(color)
-        self._turtle.forward(distance)
-
-    def turn(self, angle):
-        self._turtle.right(angle)
-
-    def rect(self, width, height, color="white", outline="black"):
-        self._turtle.pencolor(outline)
-        self._turtle.fillcolor(color)
-        self._turtle.begin_fill()
-        for _ in range(2):
-            self._turtle.forward(width)
-            self._turtle.right(90)
-            self._turtle.forward(height)
-            self._turtle.right(90)
-        self._turtle.end_fill()
-
-# -----------------------------
-# Arrow Management
-# -----------------------------
-
-arrows = {}
-
-def activate(name):
-    if name in commands:
-        write(f"Error: {name} already exists.")
-        return
-    new_arrow = Arrow(name)
-    arrows[name] = new_arrow
-    commands[name] = new_arrow
-    setattr(sys.modules["diamond"], name, new_arrow)
-    rebuild_sandbox()
-    if "sync_namespace" in globals():
-        globals()["sync_namespace"]()
-    return new_arrow
 
 # -----------------------------
 # Anti-Print
@@ -146,7 +99,6 @@ commands = {
     'ask': ask,
     'clear': clear,
     'wait': wait,
-    'activate': activate,
     'sqrt': math.sqrt,
     'sin': math.sin,
     'cos': math.cos,
